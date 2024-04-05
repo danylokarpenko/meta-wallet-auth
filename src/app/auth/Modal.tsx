@@ -71,6 +71,10 @@ export default function ModalComponent({
       toast.error('Username must be at least 3 characters');
       return;
     }
+    if (!window.ethereum) {
+      toast.error('Please install MetaMask');
+      return;
+    }
 
     const isSignUp = activeTab === 'SIGNUP';
     setIsRequesting(true);
@@ -134,7 +138,7 @@ export default function ModalComponent({
             </h2>
             <form className="space-y-6" action="#" method="POST">
               <MetamaskButton
-                type="submit"
+                type="button"
                 onClick={handleMetaMaskSign}
                 disabled={isRequesting}
               />
@@ -155,7 +159,7 @@ export default function ModalComponent({
                 onChange={(e) => setUsername(e.target.value)}
               />
               <MetamaskButton
-                type="submit"
+                type="button"
                 onClick={handleMetaMaskSign}
                 disabled={isRequesting}
               />
