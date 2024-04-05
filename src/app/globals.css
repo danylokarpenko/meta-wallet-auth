@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+  background-color: #1f2937 !important; /* Adjust the color to match dark:bg-gray-800 or any desired color */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
