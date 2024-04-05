@@ -71,8 +71,10 @@ export default function ModalComponent({
       toast.error('Username must be at least 3 characters');
       return;
     }
+
     const isSignUp = activeTab === 'SIGNUP';
     setIsRequesting(true);
+
     try {
       if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
