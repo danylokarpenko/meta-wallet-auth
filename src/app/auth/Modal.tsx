@@ -67,6 +67,10 @@ export default function ModalComponent({
   }
 
   async function handleMetaMaskSign() {
+    if (username.length < 3 && activeTab === 'SIGNUP') {
+      toast.error('Username must be at least 3 characters');
+      return;
+    }
     const isSignUp = activeTab === 'SIGNUP';
     setIsRequesting(true);
     try {
